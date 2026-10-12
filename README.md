@@ -35,6 +35,7 @@ All examples are real outputs of Claude Sonnet 5.5 with the prompt from this rep
 ## How it works
 
 ```mermaid
+%%{init: {"sequence": {"mirrorActors": false}}}%%
 sequenceDiagram
     participant H as Handy<br/>(Whisper, on your PC)
     participant C as Chistovik<br/>(localhost:8765)
