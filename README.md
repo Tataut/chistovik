@@ -35,13 +35,16 @@ All examples are real outputs of Claude Sonnet 5.5 with the prompt from this rep
 ## How it works
 
 ```mermaid
-flowchart LR
-    A[Microphone] --> B["Handy<br/>Whisper on your PC"]
-    B -- raw transcript --> C["Chistovik<br/>localhost:8765"]
-    C -- prompt + dictionary --> D["LLM<br/>any OpenAI-compatible API"]
-    D -- clean text --> C
-    C --> B
-    B --> E[Text pasted at the cursor]
+sequenceDiagram
+    participant H as Handy<br/>(Whisper, on your PC)
+    participant C as Chistovik<br/>(localhost:8765)
+    participant L as LLM<br/>(any OpenAI-compatible API)
+    Note over H: you speak, Whisper transcribes
+    H->>C: raw transcript
+    C->>L: rules + dictionary + transcript
+    L-->>C: clean text
+    C-->>H: clean text
+    Note over H: pastes it at the cursor
 ```
 
 - [**Handy**](https://github.com/cjpais/Handy) is a free, open-source dictation app. Hold a hotkey, speak, release, and the text appears where your cursor is. Speech is recognized locally by Whisper; audio never leaves your computer. Handy can send the transcript to an OpenAI-compatible API for "post-processing".
