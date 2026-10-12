@@ -1,0 +1,20 @@
+# Chistovik settings. Restart Chistovik after editing this file.
+# prompt.txt and dictionary.txt need no restart: they are re-read on every dictation.
+
+# Any service with an OpenAI-compatible API: the address up to and including /v1.
+#   Claude:      https://api.anthropic.com/v1
+#   OpenAI:      https://api.openai.com/v1
+#   OpenRouter:  https://openrouter.ai/api/v1
+#   Ollama:      http://localhost:11434/v1   (a model on your own computer, no internet)
+upstream = "https://api.anthropic.com/v1"
+
+# Model. If set, it overrides the model from Handy's settings.
+model = "claude-sonnet-5-5"
+
+# API key: an environment variable, or key.txt next to the program (never committed to git).
+api_key_env = "CHISTOVIK_API_KEY"
+api_key_file = "key.txt"
+
+port = 8765        # in Handy: Base URL = http://localhost:8765/v1
+timeout = 10       # seconds to wait for the API; after that Handy pastes the raw transcript
+keep_warm = 25     # refresh the idle connection this often, in seconds; 0 = never

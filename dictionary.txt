@@ -1,0 +1,6 @@
+# Dictionary: how to write it ← how speech recognition hears it. Lines starting with # are not sent.
+# Add the words Whisper gets wrong. A change works from the next dictation, no restart needed.
+ИИшный, ИИшные, ИИшно ← иишный, яичный (replace «яичный» only when the text is not about eggs or food)
+Claude (always written Claude, in any grammatical case) ← Клод, Клоду, Клода, Clod, Clot
+GitHub ← гитхаб, гитхабе, гитхабу
+Хабр ← хабр, хабре
